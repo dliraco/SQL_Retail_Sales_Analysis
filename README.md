@@ -159,7 +159,7 @@ JOIN max_sales ms
 ORDER BY m.year;
 ```
 
-8. **Write a SQL query to find the top 5 customers based on the highest total sales **:
+8. **Write a SQL query to find the top 5 customers based on the highest total sales**:
 ```sql
 SELECT customer_id, SUM(total_sale) AS total_sales
 FROM retail_sales
