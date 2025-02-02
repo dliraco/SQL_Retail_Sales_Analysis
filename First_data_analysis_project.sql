@@ -1,8 +1,20 @@
-SELECT COUNT(*) AS total_sale 
-FROM retail_sales;
+-- CREATING THE DATABASE
+CREATE DATABASE data_analysis_p1;
 
-SELECT *
-FROM retail_sales;
+CREATE TABLE retail_sales
+(
+    transactions_id INT PRIMARY KEY,
+    sale_date DATE,	
+    sale_time TIME,
+    customer_id INT,	
+    gender VARCHAR(10),
+    age INT,
+    category VARCHAR(35),
+    quantity INT,
+    price_per_unit FLOAT,	
+    cogs FLOAT,
+    total_sale FLOAT
+);
 
 -- FIND NULL VALUES --
 SELECT * FROM retail_sales
@@ -105,7 +117,6 @@ GROUP BY category;
 
 -- Q.4 Write a SQL query to find the average age of customers who purchased items from the 'Beauty' category.
 SELECT category, ROUND(AVG(age), 2) AS average_age
--- SELECT category, AVG(age) AS average_age
 FROM retail_sales
 WHERE category = 'Beauty'
 GROUP BY category;
